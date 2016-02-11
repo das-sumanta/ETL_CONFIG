@@ -92,14 +92,16 @@ public class ConfigLoader {
 				
 				ps.executeUpdate();
 								
-				logSql = "INSERT INTO p2p_config(property,value) "
-						+ "VALUES(?,?)";
-				ps = con.prepareStatement(logSql);
-				ps.setString(1, "RUNID");
-				ps.setString(2, "1");
-				ps.executeUpdate();
-				ps.close();
+				
 			}
+			
+			logSql = "INSERT INTO p2p_config(property,value) "
+					+ "VALUES(?,?)";
+			ps = con.prepareStatement(logSql);
+			ps.setString(1, "RUNID");
+			ps.setString(2, "1");
+			ps.executeUpdate();
+			ps.close();
 
 			
 		} catch (SQLException e) {
